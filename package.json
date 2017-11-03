@@ -1,0 +1,20 @@
+{
+  "name": "reactnd-project-readable-starter",
+  "version": "1.0.0",
+  "description": "React Udacity Nanodegree Project",
+  "main": "index.js",
+  "scripts": {
+    "start-api": "cd api-server;node server.js",
+    "start": "cd front-end;npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phonglk/reactnd-project-readable-starter.git"
+  },
+  "author": "Le Khoi Phong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phonglk/reactnd-project-readable-starter/issues"
+  },
+  "homepage": "https://github.com/phonglk/reactnd-project-readable-starter#readme"
+}
