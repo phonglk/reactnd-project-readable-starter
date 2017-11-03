@@ -27,7 +27,7 @@ const requestAllPosts = (dispatch) => {
 
 export const indexInit = () => {
   return async (dispatch, getState) => {
-    if (getState().app.categories.length === 0) {
+    if (getState().categories.list.length === 0) {
       dispatch({ type: M_CATEGORIES_ALL_POSTS_LOADING});
       requestCategories(dispatch);
       requestAllPosts(dispatch);

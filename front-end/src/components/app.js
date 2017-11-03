@@ -8,7 +8,6 @@ import Post from '../pages/post';
 
 class App extends Component {
   render() {
-    console.log(this.props);
     return (
       <div className="app">
         <Switch>
