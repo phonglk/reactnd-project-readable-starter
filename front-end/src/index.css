@@ -44,6 +44,10 @@ html, body, #root, .app {
   color: white;
   text-shadow: 0 0 2px black;
 }
+  .app-title a {
+    color: white;
+    text-decoration: none;
+  }
 
 .category-list {
   /* position: fixed;

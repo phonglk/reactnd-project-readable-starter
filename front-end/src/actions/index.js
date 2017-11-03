@@ -5,6 +5,8 @@ import {
   ALL_POSTS_LOADING,
   CATEGORIES_DONE,
   ALL_POSTS_DONE,
+  VOTE_LOADING,
+  VOTE_DONE,
 } from '../consts';
 
 const requestCategories = (dispatch) => {
@@ -25,6 +27,12 @@ const requestAllPosts = (dispatch) => {
   });
 }
 
+const requestVote = async (postId, option) => {
+  const body = JSON.stringify({ option: `${option}Vote`})
+  const response = await request.post(`/posts/${postId}`, body);
+  return response;
+}
+
 export const indexInit = () => {
   return async (dispatch, getState) => {
     if (getState().categories.list.length === 0) {
@@ -34,5 +42,13 @@ export const indexInit = () => {
     } else {
       requestAllPosts(dispatch);
     }
+  }
+}
+
+export const postVote = (postId, option) => {
+  return async (dispatch) => {
+    dispatch({ type: VOTE_LOADING, postId, option });
+    const post = await requestVote(postId, option);
+    dispatch({ type: VOTE_DONE, post });
   }
 }

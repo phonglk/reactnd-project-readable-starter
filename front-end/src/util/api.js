@@ -4,5 +4,7 @@ if (!TOKEN) {
   window.localStorage.setItem('TOKEN', TOKEN);
 }
 const prefix = `//${document.location.hostname}:3001`;
-export const request =  (url) => fetch(prefix + url, { headers: { 'Authorization': TOKEN }})
+export const request =  (url, options = {}) => fetch(prefix + url, { headers: { 'Authorization': TOKEN, 'Content-Type': 'application/json' }, ...options })
     .then(res => res.json());
+request.post = (url, body ) => request(url, { method: 'POST', body });
+request.put = (url, body ) => request(url, { method: 'PUT', body });

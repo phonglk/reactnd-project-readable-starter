@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export default class Page extends PureComponent {
   static propTypes = {
@@ -15,7 +16,7 @@ export default class Page extends PureComponent {
     return (
       <div className="page-wrapper">
         <div className="page-side-bar">
-          <div className="app-title">Readable</div>
+          <div className="app-title"><Link to="/">Readable</Link></div>
           {Side}
         </div>
         <div className="page-content">

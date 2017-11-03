@@ -18,7 +18,7 @@ export default class PostList extends PureComponent {
               </div>
               <div className="post-content">{post.body}</div>
               <div className="post-meta">
-                <Voter score={post.voteScore} />
+                <Voter postId={post.id} />
                 <div className="post-comments">
                   <Link to={`/post/${post.id}/#comments`} className="btn">
                     <i className="fa fa-commenting-o" />
