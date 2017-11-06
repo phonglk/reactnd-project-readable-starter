@@ -13,7 +13,7 @@ export default class CategoryList extends PureComponent {
     return (
       <div className="category-list">
         {this.props.categories.map(({path, name}) => (
-          <Link to={`/category/${path}`} key={path}>{name}</Link>
+          <Link to={`/${path}`} key={path}>{name}</Link>
         ))}
       </div>
     )

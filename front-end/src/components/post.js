@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import VoterContainer from '../containers/voter-container';
 
+const getPostUrl = (post) => `/${post.category}/${post.id}`
+
 export default class Post extends PureComponent {
   static propTypes = {
     post: PropTypes.object,
@@ -14,7 +16,7 @@ export default class Post extends PureComponent {
       <div className="post-wrapper">
         <div className="post-inner">
           <div className="post-title">
-            <Link to={`/post/${post.id}`}>{post.title}</Link>
+            <Link to={getPostUrl(post)}>{post.title}</Link>
           </div>
           <div className="post-meta">
             <div className="post-author">By <u>{post.author}</u></div>
@@ -24,7 +26,7 @@ export default class Post extends PureComponent {
           <div className="post-meta">
             <VoterContainer target={post} type="Post" />
             <div className="post-comments">
-              <Link to={`/post/${post.id}/#comments`} className="btn">
+              <Link to={`${getPostUrl(post)}/#comments`} className="btn">
                 <i className="fa fa-commenting-o" />
                 {post.commentCount} Comments 
               </Link>

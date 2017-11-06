@@ -15,16 +15,14 @@ class App extends Component {
           <div className="page-side-bar">
             <div className="app-title"><Link to="/">Readable</Link></div>
             <Switch>
-              <Route exact path="/" component={CategoryListContainer} />
-              <Route path="/category/:category" component={CategoryListContainer} />
-              <Route path="/post/:postId" component={CategoryListContainer} />
+              <Route path="/" component={CategoryListContainer} />
             </Switch>
           </div>
           <div className="page-content">
             <Switch>
               <Route exact path="/" component={Index} />
-              <Route path="/category/:category" component={Category} />
-              <Route path="/post/:postId" component={Post} />
+              <Route exact path="/:category" component={Category} />
+              <Route path="/:category/:postId" component={Post} />
             </Switch>
           </div>
         </div>
