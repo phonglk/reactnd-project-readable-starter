@@ -1,12 +1,13 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
+import PostDetailContainer from '../containers/post-detail-container';
+import ComentSectionContainer from '../containers/comment-section-container';
 
-class Post extends PureComponent {
+export default class Post extends PureComponent {
   render() {
-    return <div>Post</div>
+    const { match: { params: { postId } } } = this.props;
+    return <div className="page-post">
+      <PostDetailContainer postId={postId} />
+      <ComentSectionContainer postId={postId} />
+    </div>
   }
 }
-const mapStateToProps = (state) => {
-  return state.app;
-}
-export default connect(mapStateToProps)(Post);

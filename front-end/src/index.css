@@ -107,14 +107,39 @@ html, body, #root, .app {
   font-size: 16px;
   text-decoration: none;
 }
+
+/* Loader */
+.load-wrapper {
+  position: relative;
+  
+}
+  .load-wrapper .loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    transition: background 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .load-wrapper .loader.loading {
+    background: rgba(255,255,255,0.6);
+    visibility: visible;
+  }
+
 /* Pages */
-.page-index {
+.page-index,
+.page-category,
+.page-post {
   padding: 0 20px;
   background: #f3f3f3;
   height: 100%;
 }
 
-/* Page:Index */
+/* Component: Post */
 .post-wrapper {
   padding: 0;
   padding-top: 20px;
@@ -158,17 +183,11 @@ html, body, #root, .app {
   margin: 20px 0;
 }
 
-.post-meta {
-  display: flex;
-  justify-content: space-between;
-}
-
-  .post-meta .post-score {
-    
-  }
   .post-score span {
     display: inline-block;
     box-sizing: border-box;
+    width: 35px;
+    text-align: center;
     font-size: 24px;
     padding: 0 5px;
     font-family: 'Pacifico', cursive;
@@ -193,3 +212,66 @@ html, body, #root, .app {
       .post-meta .post-comments .btn i {
         margin-right: 4px;
       }
+
+.empty-post-message {
+  background: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+/*  */
+
+#comments {
+  border-top: 2px dashed #888;
+  background: white;
+}
+/* Component: Comment */
+.comment-wrapper {
+  padding: 0;
+  padding-top: 0;
+}
+.comment-inner {
+  background: white;
+  padding: 10px;
+  box-shadow: inset 0 0px 1px rgba(0,0,0,0.3);
+}
+
+.comment-meta {
+  display: flex;
+  flex-direction: row;
+  font-size: 13px;
+  justify-content: space-between;
+}
+
+  .comment-date {
+    /* flex: 1 1 auto; */
+    text-align: right;
+    font-size: 12px;
+    color: #888;
+  }
+
+  .comment-author {
+    /* flex: 1 1 100px; */
+  }
+
+.comment-body {
+  display: flex;
+}
+
+  .comment-content {
+    margin: 5px;
+    margin-top: 10px;
+    font-size: 14px
+  }
+  .comment-body .post-score {
+    flex: 0 0 100px;
+  }
+
+    .comment-body .post-score span {
+      padding: 0 5px;
+      width: 28px;
+      font-size: 20px;
+    }
+    .comment-body .post-score .btn i {
+      font-size: 16px;
+      color: #333;
+    }

@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
+import PostListContainer from '../containers/post-list-contaner';
 
-class Category extends PureComponent {
+export default class Category extends PureComponent {
   render() {
-    return <div>Category</div>
+    const { match: { params: { category } } } = this.props;
+    return <div className="page-category">
+      <PostListContainer category={category} />
+    </div>
   }
 }
-const mapStateToProps = (state) => {
-  return state.app;
-}
-export default connect(mapStateToProps)(Category);
