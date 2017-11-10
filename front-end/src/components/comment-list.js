@@ -5,6 +5,8 @@ import Comment from './comment';
 export default class CommentList extends PureComponent {
   static propTypes = {
     comments: PropTypes.arrayOf(PropTypes.object),
+    deleteComment: PropTypes.func,
+    updateComment: PropTypes.func,
   }
 
   static defaultProps = {
@@ -12,14 +14,15 @@ export default class CommentList extends PureComponent {
   }
 
   render() {
+    const { updateComment, deleteComment, comments} = this.props;
     return (
       <div className="comment-list" id="comments">
-        {this.props.comments.length === 0 && 
+        {comments.length === 0 && 
           <div className="empty-post-message">
           There is no comment yet for this post
         </div>} 
-        {this.props.comments.map(comment => (
-          <Comment comment={comment} key={comment.id} />
+        {comments.map(comment => (
+          <Comment comment={comment} key={comment.id} updateComment={updateComment} deleteComment={deleteComment} />
         ))}
       </div>
     )
