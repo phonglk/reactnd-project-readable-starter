@@ -7,3 +7,10 @@ export const POST_VOTED = 'POST_VOTED';
 export const POST_LOADING = 'POST_LOADING';
 export const POST_DONE = 'POST_DONE';
 export const POST_EXIST = 'POST_EXIST';
+
+export const POST_POST_PROGRESS = 'POST_POST_PROGRESS';
+export const POST_POST_DONE = 'POST_POST_DONE';
+export const POST_DELETE_PROGRESS = 'POST_DELETE_PROGRESS';
+export const POST_DELETE_DONE = 'POST_DELETE_DONE';
+export const POST_EDIT_PROGRESS = 'POST_EDIT_PROGRESS';
+export const POST_EDIT_DONE = 'POST_EDIT_DONE';

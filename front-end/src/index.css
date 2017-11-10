@@ -50,40 +50,6 @@ html, body, #root, .app {
     text-decoration: none;
   }
 
-.category-list {
-  /* position: fixed;
-  top: 0;
-  min-width: 280px;
-  max-width: 400px;
-  left: 0;
-  width: 30%;
-  height: 100%;
-  box-shadow: inset 10px 10px 20px rgba(0,0,0,1), 
-    inset -10px -10px 20px rgba(0,0,0,1); */
-}
-/* 
-.category-list .cover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.9);
-  background-image: url(https://static.pexels.com/photos/227417/pexels-photo-227417.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: blur(2px) brightness(0.5);
-  background-position: center center;
-  z-index: 0;
-}
-.category-list .content {
-  position: absolute;
-  top: 100px;
-  left: 40px;
-  width: calc(100% - 40px);
-  height: 100%;
-  z-index: 2;
-} */
 .category-list a {
   display: block;
   text-align: left;
@@ -136,6 +102,7 @@ html, body, #root, .app {
 /* Pages */
 .page-index,
 .page-category,
+.page-create-post,
 .page-post {
   padding: 0 20px;
   background: #f3f3f3;
@@ -319,3 +286,40 @@ html, body, #root, .app {
     width: 100%;
     background: white;
   }
+
+/* Container: Create Post Wrapper */
+.create-post-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+  .create-post-wrapper label{
+    display: flex;
+    flex-direction: row;
+  }
+    .create-post-wrapper label span{
+      flex: 0 0 100px;
+      margin: 10px 0;
+    }
+    .create-post-wrapper label select,
+    .create-post-wrapper label input,
+    .create-post-wrapper label button,
+    .create-post-wrapper label textarea { 
+      flex: 1 1 auto;
+      height: 25px;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    .create-post-wrapper label textarea { 
+      height: 200px;
+    }
+  .create-post-wrapper label button {
+    float: right;
+  }
+
+
+.btn.create-post {
+  margin: 10px 0;
+  width: 100%;
+  text-align: center;
+  color: #333;
+}

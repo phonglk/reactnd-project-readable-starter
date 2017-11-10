@@ -22,7 +22,7 @@ export default class Voter extends PureComponent {
         <label>
         <textarea className="cmt-comment" placeholder="Your comment" ref={(comment) => {this.inputComment = comment}} />
         </label>
-        <button className="btn" onClick={this.submit}>Post</button>
+        <button className="btn" onClick={this.submit}>Post Comment</button>
       </div>
     )
   }
