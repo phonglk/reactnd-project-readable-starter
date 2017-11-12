@@ -44,7 +44,7 @@ export const postComment = (postId, commentContent, author) => {
       parentId: postId,
     };
     const body = JSON.stringify(comment)
-    const updatedComment = await POST(`/comments`, body);
+    await POST(`/comments`, body);
     dispatch({ type: COMMENT_POST_DONE, comment });
   }
 }

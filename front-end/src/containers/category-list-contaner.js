@@ -6,10 +6,10 @@ import { requestCategories } from '../data/category/action';
 
 class CategoryListContainer extends PureComponent {
   render() {
-    const { categories, isLoading } = this.props;
+    const { categories, isLoading, category } = this.props;
     return (
       <LoadWrapper loading={isLoading}>
-        <CategoryList categories={categories} />
+        <CategoryList categories={categories} category={category} />
       </LoadWrapper>
     )
   }
@@ -19,11 +19,12 @@ class CategoryListContainer extends PureComponent {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownState) => {
   const { category } = state.data;
   return {
     categories: category.list.map(id => category.ref[id]),
     isLoading: category.isLoading,
+    category: ownState.match.params.category,
   };
 }
 export default connect(mapStateToProps)(CategoryListContainer);

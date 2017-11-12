@@ -64,6 +64,9 @@ html, body, #root, .app {
   text-decoration: none;
   text-shadow: 0 0 2px rgba(0,0,0, 0.8);
 }
+  .category-list a.selected {
+    text-decoration: underline;
+  }
 
 .btn {
   border-radius: 13px;

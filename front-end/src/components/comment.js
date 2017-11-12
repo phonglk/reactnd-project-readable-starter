@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import VoterContainer from '../containers/voter-container';
 
 export default class Comment extends PureComponent {

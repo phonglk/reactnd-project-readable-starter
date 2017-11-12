@@ -3,7 +3,6 @@ import {
   POSTS_LOADING,
   POST_VOTED,
   POST_VOTING,
-  POST_EXIST,
   POST_LOADING,
   POST_DONE,
   POST_DELETE_DONE,
@@ -64,7 +63,7 @@ export const postPost = (post) => {
       ...post,
     };
     const body = JSON.stringify(finalPost)
-    const updatedComment = await POST(`/posts`, body);
+    await POST(`/posts`, body);
     dispatch({ type: POST_POST_DONE, post: finalPost });
     dispatch(replace(`/${finalPost.category}/${finalPost.id}`));
   }

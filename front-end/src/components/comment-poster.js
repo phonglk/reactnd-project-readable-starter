@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 
 export default class Voter extends PureComponent {
   submit = () => {
@@ -13,7 +12,6 @@ export default class Voter extends PureComponent {
     this.inputComment.value="";
   }
   render() {
-    const { score } = this.props;
     return (
       <div className="comment-poster">
         <label>

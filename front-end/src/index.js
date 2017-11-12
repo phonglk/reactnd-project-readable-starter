@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux'
 import thunk from 'redux-thunk';

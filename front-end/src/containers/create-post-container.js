@@ -1,9 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import PostList from '../components/post-list';
 import LoadWrapper from '../components/load-wrapper';
-import { requestPosts, postPost, requestPost, updatePost } from '../data/post/action';
+import { postPost, requestPost, updatePost } from '../data/post/action';
 
 class CreatePostContainer extends PureComponent {
   static propTypes = {
@@ -16,6 +15,9 @@ class CreatePostContainer extends PureComponent {
     super(props);
     this.state = {
       category: props.category || 'none',
+      title: '',
+      author: '',
+      body: '',
     }
   }
   componentWillReceiveProps(nextProps) {

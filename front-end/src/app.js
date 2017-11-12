@@ -16,7 +16,7 @@ class App extends Component {
           <div className="page-side-bar">
             <div className="app-title"><Link to="/">Readable</Link></div>
             <Switch>
-              <Route path="/" component={CategoryListContainer} />
+              <Route path="/:category?" component={CategoryListContainer} />
             </Switch>
           </div>
           <div className="page-content">

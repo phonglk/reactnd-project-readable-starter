@@ -34,3 +34,5 @@ Readable is a blog-like web application without authenticate to demonstrate Reac
 ![Imgur](https://i.imgur.com/lGp8PWj.png)
 ## Post Detail
 ![Imgur](https://i.imgur.com/Qq1WdcZ.png)
+## Post Creating
+![Imgur](https://i.imgur.com/gIulu3y.png)

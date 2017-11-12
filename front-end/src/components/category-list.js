@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 export default class CategoryList extends PureComponent {
   static propTypes = {
     categories: PropTypes.arrayOf(PropTypes.object),
+    category: PropTypes.string,
   }
   static defaultProps = {
     categories: [],
@@ -13,7 +14,7 @@ export default class CategoryList extends PureComponent {
     return (
       <div className="category-list">
         {this.props.categories.map(({path, name}) => (
-          <Link to={`/${path}`} key={path}>{name}</Link>
+          <Link to={`/${path}`} key={path} className={path === this.props.category ? 'selected' : ''}>{name}</Link>
         ))}
       </div>
     )
