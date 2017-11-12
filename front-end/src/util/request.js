@@ -10,4 +10,4 @@ export const request =  (url, options = {}) => fetch(prefix + url, { headers: { 
 export const GET = (url) => request(url);
 export const POST = (url, body) => request(url, { method: 'POST', body });
 export const PUT = (url, body) => request(url, { method: 'PUT', body });
-export const DELETE = (url, body) => request(url, { method: 'DELETE', body });
+export const DELETE = (url, body) => request(url, { method: 'DELETE' });

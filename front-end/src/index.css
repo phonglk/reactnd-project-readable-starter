@@ -26,6 +26,7 @@ html, body, #root, .app {
 .page-content {
   flex: 1 1 auto;
   overflow: auto;
+  background: #f3f3f3;
 }
 
 .app-title {
@@ -105,7 +106,6 @@ html, body, #root, .app {
 .page-create-post,
 .page-post {
   padding: 0 20px;
-  background: #f3f3f3;
   height: 100%;
 }
 
@@ -169,14 +169,15 @@ html, body, #root, .app {
 
   .post-meta .post-comments {
     position: relative;
+    flex: 0 0 250px;
+    display: flex;
   }
 
     .post-meta .post-comments .btn {
-      position: absolute;
-      bottom: 0;
-      right: 0;
       font-size: 14px;
       white-space: nowrap;
+      margin-left: 10px;
+      align-self: flex-end;
       color: #333;
     }
       .post-meta .post-comments .btn i {
@@ -287,6 +288,28 @@ html, body, #root, .app {
     background: white;
   }
 
+/* Component: PostSort */
+.post-sort {
+  padding-top: 20px;
+}
+.post-sort > * {
+  padding: 3px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #999;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+.post-sort button {
+  cursor: pointer;
+}
+
+.post-sort span {
+  color: #000;
+  border: 1px solid #666;
+}
+
 /* Container: Create Post Wrapper */
 .create-post-wrapper {
   display: flex;
@@ -323,3 +346,4 @@ html, body, #root, .app {
   text-align: center;
   color: #333;
 }
+

@@ -11,15 +11,23 @@ import {
   POST_EDIT_DONE,
   POST_EDIT_PROGRESS,
   POST_POST_DONE,
-  POST_POST_PROGRESS
+  POST_POST_PROGRESS,
+  POSTS_SORT,
 } from './actionType';
 import createDataReducer from '../../util/create-data-reducer';
-
+// sort posts
+// popup inform info
 export default createDataReducer({
   LOADING: POSTS_LOADING,
   DONE: POSTS_DONE,
-  reducer: (state, action) => {
+  reducer: (state = {
+    sortBy: 'date'
+  }, action) => {
     switch (action.type) {
+      case POSTS_SORT: return {
+        ...state,
+        sortBy: action.sort,
+      }
       case POST_VOTING: return ({
         ...state,
         ref: {

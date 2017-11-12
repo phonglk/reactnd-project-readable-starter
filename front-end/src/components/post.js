@@ -8,6 +8,13 @@ const getPostUrl = (post) => `/${post.category}/${post.id}`
 export default class Post extends PureComponent {
   static propTypes = {
     post: PropTypes.object,
+    deletePost: PropTypes.func,
+  }
+
+  onDeleteClick = () => {
+    if(window.confirm('Are you sure you want to delete this post')) {
+      this.props.deletePost(this.props.post);
+    }
   }
 
   render() {
@@ -25,7 +32,14 @@ export default class Post extends PureComponent {
           <div className="post-content">{post.body}</div>
           <div className="post-meta">
             <VoterContainer target={post} type="Post" />
+
             <div className="post-comments">
+              <Link to={`/posts/edit/${post.id}`} className="btn">
+                <i className="fa fa-edit" /> Edit
+              </Link>
+              <button className="btn" onClick={this.onDeleteClick}>
+                <i className="fa fa-trash" /> Delete
+              </button>
               <Link to={`${getPostUrl(post)}/#comments`} className="btn">
                 <i className="fa fa-commenting-o" />
                 {post.commentCount} Comments 

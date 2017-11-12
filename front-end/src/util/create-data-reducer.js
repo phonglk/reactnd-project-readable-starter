@@ -7,6 +7,7 @@ export default ({
   ref: {},
   list: [],
   isLoading: true,
+  ...reducer( undefined, { type: '@@INIT' }),
 }, action ) => {
   const myReducer = {
     [LOADING]: () => ({
@@ -21,6 +22,7 @@ export default ({
         list.push(entity[key]);
       })
       return {
+        ...state,
         ref,
         list,
         isLoading: false,

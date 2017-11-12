@@ -6,6 +6,7 @@ export default class PostList extends PureComponent {
   static propTypes = {
     posts: PropTypes.arrayOf(PropTypes.object),
     category: PropTypes.object,
+    deletePost: PropTypes.func,
   }
 
   static defaultProps = {
@@ -20,7 +21,7 @@ export default class PostList extends PureComponent {
           Sorry, there is no post for this category
         </div>} 
         {this.props.posts.map(post => (
-          <Post post={post} key={post.id} />
+          <Post post={post} key={post.id} deletePost={this.props.deletePost}/>
         ))}
       </div>
     )

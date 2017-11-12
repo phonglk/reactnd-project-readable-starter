@@ -1,5 +1,6 @@
 export const POSTS_LOADING = 'POSTS_LOADING';
 export const POSTS_DONE = 'POSTS_DONE';
+export const POSTS_SORT = 'POSTS_SORT';
 
 export const POST_VOTING = 'POST_VOTING';
 export const POST_VOTED = 'POST_VOTED';

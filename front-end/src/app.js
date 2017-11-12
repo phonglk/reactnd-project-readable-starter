@@ -23,6 +23,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Index} />
               <Route path="/posts/create/:category?" component={CreatePost} />
+              <Route path="/posts/edit/:postId" component={CreatePost} />
               <Route exact path="/:category" component={Category} />
               <Route path="/:category/:postId" component={Post} />
             </Switch>

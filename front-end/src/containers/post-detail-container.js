@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Post from '../components/post';
 import LoadWrapper from '../components/load-wrapper';
-import { requestPost } from '../data/post/action';
+import { requestPost, deletePost } from '../data/post/action';
 
 class PostDetailContainer extends PureComponent {
   static propTypes = {
@@ -12,10 +12,13 @@ class PostDetailContainer extends PureComponent {
   static defaultProps = {
     post: {},
   }
+  deletePost = (post) => {
+    this.props.dispatch(deletePost(post));
+  }
   render() {
     const { post, isLoading } = this.props;
     return <LoadWrapper loading={isLoading}>
-      <Post post={post} />
+      <Post post={post} deletePost={this.deletePost} />
     </LoadWrapper>
   }
 
