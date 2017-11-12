@@ -29,11 +29,8 @@ Readable is a blog-like web application without authenticate to demonstrate Reac
 * Up/Down vote comment
 ## URL
 
-# Online version
-The online version is deployed at https://phonglk.github.io/reactnd-project-myreads-starter/ (HashRouter Branch) but using HashRouter instead of BrowserRouter because github's limitation
-
 # Screenshots
-## Book List
-![Imgur](https://i.imgur.com/GUzQCdO.png)
-## Book Search
-![Imgur](https://i.imgur.com/EDXtFDm.png)
+## Post List
+![Imgur](https://i.imgur.com/lGp8PWj.png)
+## Post Detail
+![Imgur](https://i.imgur.com/Qq1WdcZ.png)
