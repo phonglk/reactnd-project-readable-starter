@@ -1,3 +1,5 @@
+Branch for deploy to heroku
+
 # Readable
 
 Readable is a blog-like web application without authenticate to demonstrate React + Redux
