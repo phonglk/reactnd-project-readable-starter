@@ -4,7 +4,7 @@
   "description": "React Udacity Nanodegree Project",
   "main": "index.js",
   "scripts": {
-    "start-api": "cd api-server;node server.js",
+    "postinstall": "cd api-server;npm install;node server.js",
     "start": "cd front-end;npm start"
   },
   "repository": {
