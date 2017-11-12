@@ -3,8 +3,12 @@
 Readable is a blog-like web application without authenticate to demonstrate React + Redux
 
 # Installation & Running
-To get started developing right away:
-
+## API Server
+* `cd api-server`
+* `npm install`
+* `node server`
+## Application
+* `cd front-end`
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 * The api server is required
