@@ -21,7 +21,7 @@ const store = createStore(rootReducer, enhancer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter history={history}>
+    <ConnectedRouter history={history} basename="/app">
       <Route match="/" component={App} />
     </ConnectedRouter>
   </Provider>
