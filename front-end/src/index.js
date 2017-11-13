@@ -11,7 +11,7 @@ import rootReducer from './reducer';
 import './index.css';
 import App from './app';
 
-const history = createHistory();
+const history = createHistory({ basename: '/app' });
 const composeEnhancers = typeof window === 'object' &&
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
 const enhancer = composeEnhancers(
@@ -21,7 +21,7 @@ const store = createStore(rootReducer, enhancer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter history={history} basename="/app">
+    <ConnectedRouter history={history}>
       <Route match="/" component={App} />
     </ConnectedRouter>
   </Provider>
