@@ -4,10 +4,11 @@
   "description": "React Udacity Nanodegree Project",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd api-server;npm install;cd ../front-end;npm install",
+    "install-server": "cd api-server;npm install",
+    "postinstall": "npm run install-server",
     "start-api": "cd api-server;npm start",
     "start-fe": "cd front-end;npm start",
-    "start": "npm run start-api | npm run start-fe"
+    "start": "npm run start-api"
   },
   "repository": {
     "type": "git",
