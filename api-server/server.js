@@ -17,6 +17,9 @@ app.use(cors())
 
 app.get('/', (req, res) => {
   const help = `
+  <div>
+    <a href="/app">Application</a>
+  </div>
   <pre>
     Welcome to the Udacity Readable API!
 
