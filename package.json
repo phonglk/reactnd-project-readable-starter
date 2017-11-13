@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "install-server": "cd api-server;npm install",
-    "postinstall": "npm run install-server",
-    "start-api": "cd api-server;npm start",
-    "start-fe": "cd front-end;npm start",
-    "start": "npm run start-api"
+    "install-fe": "cd front-end;npm run build",
+    "postinstall": "npm run install-server; npm run install-fe",
+    "start": "cd api-server;npm start"
   },
   "repository": {
     "type": "git",

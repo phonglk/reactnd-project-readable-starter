@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const path = require('path')
 const config = require('./config')
 const categories = require('./categories')
 const posts = require('./posts')
@@ -113,7 +114,8 @@ app.get('/', (req, res) => {
 })
 
 app.use((req, res, next) => {
-  const token = req.get('Authorization')
+  const token = req.get('Authorization');
+  if (/(\/app|\.[a-z]*)/.test(req.path)) return next();
 
   if (token) {
     req.token = token
@@ -311,7 +313,13 @@ app.delete('/comments/:id', (req, res) => {
           }
       )
 })
+app.use('/static', express.static(path.join(__dirname, '../front-end/build/static/')))
+app.use('/favicon.ico', express.static(path.join(__dirname, '../front-end/build/favicon.ico')))
+app.get('/app*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../front-end/build/index.html'));
+})
 
 app.listen(config.port, () => {
   console.log('Server listening on port %s, Ctrl+C to stop', config.port)
 })
+
